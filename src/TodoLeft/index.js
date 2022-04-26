@@ -5,7 +5,7 @@ import styled from "styled-components";
 function TodoLeft(){
     return(
         <div>
-            dfjnsdfnjsdnfjkn
+            mefkfnefnfenk
         </div>
     )
 };

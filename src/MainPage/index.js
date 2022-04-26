@@ -31,7 +31,7 @@ const TodoContainer = styled.div`
     width: 370px;
     height: 740px;
     padding: 20px;
-    
+    margin-left: 620px;
 `;
 
 
@@ -44,8 +44,8 @@ function MainPage(){
         <Container>
             <TodoContainer>
                 <TodoDate/>
-                <TodoLeft>
-                </TodoLeft>
+                <TodoLeft/>
+                <TodoAdd/>
             </TodoContainer>
         </Container>
 
