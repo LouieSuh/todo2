@@ -2,13 +2,16 @@ import { buildQueries } from '@testing-library/react';
 import React, { useState } from 'react';
 import styled from "styled-components";
 
-import TodoDate from "../TodoDate"
+import TodoDate from '../TodoDate';
+import TodoLeft from '../TodoLeft';
+import TodoAdd from '../TodoAdd';
 
 const Container = styled.div`
     background-color: lightblue;
     width:2000px;
     height: 1000px; 
     display: flex;
+    
 
 `;
 
@@ -17,6 +20,7 @@ const react = styled.div `
     width: 100px;
     background-color: white;
     display: flex;
+    
     
 
 `;
@@ -33,12 +37,15 @@ const TodoContainer = styled.div`
 
 
 
+
 function MainPage(){
     return (
 
         <Container>
             <TodoContainer>
                 <TodoDate/>
+                <TodoLeft>
+                </TodoLeft>
             </TodoContainer>
         </Container>
 
