@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const Date = styled.div`
+const Timestamp = styled.div`
     font-size: 40px;
 `;
 
@@ -10,11 +10,17 @@ const Week = styled.div`
 `;
 
 function TodoDate(){
+const today = new Date();
+console.log(today);
     return(
         <div>
-            <Date> 
-                2022/04/26
-            </Date>
+            <Timestamp> 
+                {today.getFullYear()}
+                /
+                {today.getDate()}
+                /
+                {today.getMonth()+1}
+            </Timestamp>
             <Week>
                 Tuesday
             </Week>

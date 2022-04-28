@@ -5,6 +5,7 @@ import styled from "styled-components";
 import TodoDate from '../TodoDate';
 import TodoLeft from '../TodoLeft';
 import TodoAdd from '../TodoAdd';
+import TodoItem from '../TodoItem';
 
 const Container = styled.div`
     background-color: lightblue;
@@ -44,8 +45,9 @@ function MainPage(){
         <Container>
             <TodoContainer>
                 <TodoDate/>
-                <TodoLeft/>
+                <TodoLeft/>        
                 <TodoAdd/>
+                <TodoItem/>
             </TodoContainer>
         </Container>
 
