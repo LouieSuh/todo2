@@ -1,30 +1,19 @@
-import { buildQueries } from '@testing-library/react';
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import styled from "styled-components";
 
-import TodoDate from '../TodoDate';
-import TodoLeft from '../TodoLeft';
-import TodoAdd from '../TodoAdd';
-import TodoItem from '../TodoItem';
+import TodoDate from "../TodoDate";
+import TodoLeft from "../TodoLeft";
+import TodoAdd  from  "../TodoAdd";
+import TodoItem from "../TodoItem";
+
 
 const Container = styled.div`
+    height: 100vh;
     background-color: lightblue;
-    width:2000px;
-    height: 1000px; 
     display: flex;
     
-
 `;
 
-const react = styled.div `
-    height: 100px;
-    width: 100px;
-    background-color: white;
-    display: flex;
-    
-    
-
-`;
 
 const TodoContainer = styled.div`
     border-radius: 20px;
@@ -37,28 +26,34 @@ const TodoContainer = styled.div`
 
 
 
+function Mainpage(){
 
 
-function MainPage(){
+
+    // const [age, setAge] = useState(6);
+
+    const [todos, setTodos] = useState([
+
+        { isDone: false, text: "Hello", id: 1}
+
+    ]);
+
+    // const addTodo = (todo) => {
+    //     setTodos([...todos, todo]);
+    // };
+    // console.log(todos);
+    
+    
     return (
-
         <Container>
             <TodoContainer>
                 <TodoDate/>
-                <TodoLeft/>        
-                <TodoAdd/>
+                <TodoLeft todos={todos}  />
+                <TodoAdd todos={todos} updateTodo={addTodo}/>
                 <TodoItem/>
             </TodoContainer>
         </Container>
-
     )
-};
-    
+}   
 
-export default MainPage;
-
-
-
-
-
-
+export default Mainpage;
