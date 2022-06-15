@@ -17,10 +17,25 @@ const Input = styled.button`
     }
 `;
 
+
 const CheckBox2 = styled.img`
     width: 50px;
     height:50px;
     margin-left: 150px;
+=======
+
+const Working = styled.div`
+   fontsize:24;
+    
+
+
+`;
+
+function rubish bin(){
+    if rubish bin == "clicked" 
+    clear rubish bin; 
+}
+>>>>>>> 50ecb886346e2cae1be3745fc2c8c23acadc238e
 `;
 
 const Text = styled.div`
