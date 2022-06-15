@@ -1,47 +1,50 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, {css} from "styled-components";
+import {useHistory} from "react-router-dom";
 
-const DueContainer = styled.div`
-display:flex;
-flex-direction:row;
+const Container = styled.div`
+    display:flex;
+    flex-direction:row;
+`;
+const Input = styled.button`
+    width: 50px;
+    height:50px;
+    ${(props) =>
+        props.isDone &&
+        css`
+            background-color: #fccf03;
+        `
+    }
 `;
 
-
-const CheckBox = styled.div`
-background-color:red;
-width: 20px;
-height:20px;
-border-radius: 50px;
-margin-right:10px;
+const CheckBox2 = styled.img`
+    width: 50px;
+    height:50px;
+    margin-left: 150px;
 `;
 
+const Text = styled.div`
+    color: #87f542;
+    font-weight: 800;
+    font-size: 15px;
+    margin-top: 30px;
+`
 
-const Working = styled.div`
-   font-size:24px;
+function TodoItem({deleteTodo,todo}){
     
+    const onClickChange = () =>{
+        deleteTodo(todo.id);
+    }
+ 
 
-
-`;
-
-const TrashBin = styled.div`
-background-color:grey;
-width: 20px;
-height:20px;
-border-radius: 50px;
-margin-right:10px;
-`;
-
-
-
-function TodoItem(){
+    
     return(
-        <DueContainer>
-            <CheckBox>
-            </CheckBox>
-            <Working> Web Development </Working>
-        </DueContainer>
-    )
-    
+        <Container>
+        <Input isDone={todo.isDone}></Input>
+        <Text>{todo.text}</Text>
+        <CheckBox2  src="https://cdn-icons-png.flaticon.com/512/3096/3096673.png" onClick={onClickChange}  />
+        </Container>
+    );
 }
 
 export default TodoItem;

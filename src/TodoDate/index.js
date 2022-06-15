@@ -1,44 +1,24 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { buildQueries } from "@testing-library/react";
 
-const Timestamp = styled.div`
-    font-size: 40px;
-`;
-
-const Week = styled.div`
-    font-size:25px;
-`;
-
-const Title = styled.div`
-    font-size: 13px;
-`;
-
-
+const Information = styled.div`
+    color: #87f542;
+    font-weight: 800;
+    font-size: 15px;
+    margin-top: 30px;
+`
 
 function TodoDate(){
-const today = new Date();
-const dayName = today.toLocaleString("en-US", {weekday: "long"});
-console.log(today);
+    const Today = new Date();
+    const DayName = Today.toLocaleString("ko-KR", { weekday: "long"});
     return(
-        <div>
-            <Timestamp> 
-                {today.getFullYear()}
-                /
-                {today.getMonth()+1}
-                /
-                {today.getDate()}
-                
-            </Timestamp>
-            <Week>
-                {dayName}
-            </Week>
-        </div>
-    )
+        <>
+        <div>{Today.getFullYear()}</div>
+        <div>{Today.getMonth()+1}</div>
+        <div>{Today.getDate()}</div>
+        <DayName>{DayName}</DayName>
+        </>
+    );
 }
-
 export default TodoDate;
-
-
-
-
-

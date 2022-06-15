@@ -1,65 +1,49 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-
-const LabelWrapper = styled.div`
-    display: flex;
-    flex-direction:row;
-    margin:auto;
-    width: 70%;
-    justify-content: center;
-    align-items: center;
-`;
+import {useHistory} from "react-router-dom";
 
 const Input = styled.input`
-    width: 200px;
-    height: 30px;
-    background-color: #D3D3D3;
-`;
+    font-size:24px;
+    position: relative;
+`
 
-const Button = styled.div`
-    font-size: 30px;
-    border-radius: 3px;
-    margin: 1px;
-    border: 1px solid;
-`;
+const Button = styled.button`
+    font-weight: 800;
+    color: black;
+    font-size: 24px;
+    position: relative;
+    background-color:#03fc90;
+`
 
-
-
-function TodoAdding({todos, updateTodo}){
-
+function TodoAdd({todos,updateTodo}){
     const [todo, setTodo] = useState({
-        text: "",
         id: null,
-        isDone: false,
+        text:"",
+        isDone:false,
     });
     
-
-
-    const onClickChange = ()=>{
+    const putTodoInfo = (e) => {
+    const {name,value} = e.target;
+       
+        setTodo ({
+            id: todos.length + 1,
+            text: value,
+            isDone:true,
+        });
+        console.log(todo);
+    }
+    
+    const onClickChange = () =>{
+        //function
         updateTodo(todo);
-    };
-
-    const todoAdd = (e) => {
-        const { name, value } = e.target;
-            setTodo ({
-                id: "", todos,length + 1;
-                text: value,
-                isDone; false,
-    });
-    };
+        // alert("Go");
+    }
 
     return(
-        <LabelWrapper>
-            <Input 
-            type="text"
-            name="text"
-            value={todo.text}
-            onChange={todoAdd}></Input>
-
-            <Button onClick={onClickChange}> Add</Button>
-        </LabelWrapper>
-        
-    )
-};
-
-export default TodoAdding;
+        <>
+        <Input type="text" value={todo.text} name="text" onChange={putTodoInfo}></Input>
+        <Button onClick={onClickChange}>Add</Button>
+        </>
+    );
+}
+export default TodoAdd;
